@@ -90,13 +90,13 @@ func (hm *RemoteHardwareMonitor) Stop() {
 	hm.failureCount = 0
 }
 
-func pollMetrics(hm *RemoteHardwareMonitor) error {
+func queryMsiAfterburner(hm *RemoteHardwareMonitor) (*HardwareMonitor, error) {
 	url := fmt.Sprintf("http://%s/mahm", hm.targetHost)
 
 	request, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		log.Printf("Failed to create request: %v", err)
-		return err
+		return nil, err
 	}
 
 	request.SetBasicAuth(hm.username, hm.password)
@@ -111,7 +111,7 @@ func pollMetrics(hm *RemoteHardwareMonitor) error {
 		failedRequestsCounter.Inc()
 		hm.failureCount += 1
 		log.Printf("Could not get information from %s: %v", url, err)
-		return err
+		return nil, err
 	}
 
 	defer response.Body.Close()
@@ -119,16 +119,44 @@ func pollMetrics(hm *RemoteHardwareMonitor) error {
 	responsesCounter.WithLabelValues(string(response.StatusCode)).Inc()
 
 	if response.StatusCode != 200 {
-		return fmt.Errorf("Got invalid response from %v: %v", url, response.Status)
+		return nil, fmt.Errorf("got invalid response from %v: %v", url, response.Status)
 	}
 
 	hardwareData, err := parseResponse(response.Body)
 
 	if err != nil {
+		return nil, err
+	}
+
+	return hardwareData, nil
+}
+
+func collectMetrics(hardwareData *HardwareMonitor) {
+	for _, entry := range hardwareData.Data.Entries {
+		collector, err := getMetricCollector(&entry, &hardwareData.Gpus.Entries)
+		if err != nil {
+			switch err.(type) {
+			case *BlackListedMetric:
+				// ignore
+				break
+			default:
+				log.Printf("Could not collect data from metric [%s]: %v", entry.LocalizedSourceName, err)
+			}
+		}
+		if collector != nil {
+			(*collector).Set(normalizeMetricValue(entry.Data, entry.SourceUnits))
+		}
+	}
+}
+
+func pollMetrics(hm *RemoteHardwareMonitor) error {
+	hardwareData, err := queryMsiAfterburner(hm)
+
+	if err != nil {
 		return err
 	}
 
-	if (hm.gpus == nil && hm.failureCount >= 3) && len(hardwareData.Gpus.Entries) > 0 {
+	if (hm.gpus == nil || hm.failureCount >= 3) && len(hardwareData.Gpus.Entries) > 0 {
 		hm.gpus = hardwareData.Gpus.Entries
 
 		log.Printf("Gpus available in the host machine")
@@ -141,21 +169,7 @@ func pollMetrics(hm *RemoteHardwareMonitor) error {
 	// reset the failure counts on success
 	hm.failureCount = 0
 
-	for _, entry := range hardwareData.Data.Entries {
-		collector, err := getMetricCollector(entry.SourceName, entry.SourceUnits)
-		if err != nil {
-			switch err.(type) {
-			case *BlackListedMetric:
-				// ignore
-				break
-			default:
-				log.Printf("Could not collect data from metric [%s]", entry.LocalizedSourceName)
-			}
-		}
-		if collector != nil {
-			(*collector).Set(normalizeMetricValue(entry.Data, entry.SourceUnits))
-		}
-	}
+	collectMetrics(hardwareData)
 
 	return nil
 }
@@ -183,8 +197,8 @@ var (
 	})
 )
 
-func getMetricCollector(metricName string, metricUnit string) (*prometheus.Gauge, error) {
-	name, labels, err := normalizeMetricName(metricName, metricUnit)
+func getMetricCollector(metric *HardwareMonitorEntry, gpus *[]HardwareMonitorGpuEntry) (*prometheus.Gauge, error) {
+	name, labels, err := normalizeMetricName(metric, gpus)
 
 	if err != nil {
 		return nil, err

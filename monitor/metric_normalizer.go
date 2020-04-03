@@ -3,6 +3,7 @@ package monitor
 import (
 	"fmt"
 	"github.com/prometheus/client_golang/prometheus"
+	"log"
 	"regexp"
 	"strings"
 )
@@ -30,7 +31,16 @@ var blackListRegex = []*regexp.Regexp{
 // TODO load from config
 // regex to filter gpu metrics and assign them to
 // the GPU
-var gpuMetrics = []*regexp.Regexp{}
+var gpuMetrics = []*regexp.Regexp{
+	regexp.MustCompile(".*?gpu.*?"),
+	regexp.MustCompile("(fb|vid|bus|memory) usage"),
+	regexp.MustCompile("(core|memory) clock"),
+	regexp.MustCompile("$power^"),
+	regexp.MustCompile("fan (speed|tachometer)"),
+	regexp.MustCompile("(temp|power|voltage|no load) limit"),
+	// this are not gpu specific, it applies to the whole system
+	//regexp.MustCompile("frame(rate|time).*"),
+}
 
 var metricUnits = map[string]string{
 	"c":  "celsius",
@@ -41,7 +51,10 @@ var metricUnits = map[string]string{
 	"mhz": "hertz",
 }
 
-func normalizeMetricName(metricName string, unit string) (string, *prometheus.Labels, error) {
+func normalizeMetricName(metric *HardwareMonitorEntry, gpus *[]HardwareMonitorGpuEntry) (string, *prometheus.Labels, error) {
+	metricName := metric.LocalizedSourceName
+	unit := metric.SourceUnits
+
 	var name = strings.ToLower(strings.TrimSpace(metricName))
 
 	for _, blRegex := range blackListRegex {
@@ -63,16 +76,33 @@ func normalizeMetricName(metricName string, unit string) (string, *prometheus.La
 		suffix = lowerUnit
 	}
 
+	labels = make(map[string]string)
+
 	// check if it's a known metric
 	if cpuMetrics.MatchString(name) {
 		pieces := cpuMetrics.FindAllStringSubmatch(name, -1)
-		labels = make(map[string]string)
 
 		if pieces[0][1] != "" {
 			labels["core"] = pieces[0][1]
 		} else {
 			// reset the suffix to just total
 			suffix = "total"
+		}
+	}
+
+	for _, gpuRegex := range gpuMetrics {
+		// if it's a know GPU metric
+		if gpuRegex.MatchString(name) {
+			if len(*gpus) > metric.GpuIndex {
+				gpu := (*gpus)[metric.GpuIndex]
+
+				labels["gpu"] = gpu.Device
+				labels["gpu_id"] = gpu.GpuId
+				labels["gpu_bios"] = gpu.BIOS
+				labels["gpu_driver"] = gpu.Driver
+			} else {
+				log.Printf("GPU index of %d but only %d gpus available", metric.GpuIndex+1, len(*gpus))
+			}
 		}
 	}
 
