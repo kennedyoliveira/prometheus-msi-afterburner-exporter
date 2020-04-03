@@ -1,4 +1,4 @@
-package main
+package monitor
 
 import (
 	"fmt"
@@ -6,8 +6,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"log"
 	"net/http"
-	"regexp"
-	"strings"
 	"time"
 )
 
@@ -18,16 +16,32 @@ type RemoteHardwareMonitor struct {
 	// The host to be scrapped
 	targetHost string
 
+	// credentials to access the remote api
+	username string
+	password string
+
+	// timer that will trigger the polling of data
 	ticker *time.Ticker
 
 	// channel used to stop the monitoring
 	done chan int
+
+	// gpus being monitored
+	gpus []HardwareMonitorGpuEntry
+
+	// amount of failure, for logging purposes
+	failureCount int
+
+	// http client for requests
+	httpClient http.Client
 }
 
-func NewRemoteHardwareMonitor(interval time.Duration, host string) *RemoteHardwareMonitor {
+func NewRemoteHardwareMonitor(interval time.Duration, host string, username string, password string) *RemoteHardwareMonitor {
 	return &RemoteHardwareMonitor{
 		updateInterval: interval,
 		targetHost:     host,
+		username:       username,
+		password:       password,
 	}
 }
 
@@ -42,6 +56,9 @@ func (hm *RemoteHardwareMonitor) Start() {
 		log.Printf("Update interval: %v", hm.updateInterval)
 		hm.ticker = time.NewTicker(hm.updateInterval)
 		hm.done = make(chan int)
+		hm.httpClient = http.Client{
+			Timeout: 10 * time.Second,
+		}
 
 		for {
 			select {
@@ -68,31 +85,36 @@ func (hm *RemoteHardwareMonitor) Stop() {
 	if hm.done != nil {
 		close(hm.done)
 	}
+
+	hm.gpus = nil
+	hm.failureCount = 0
 }
 
-func pollMetrics(m *RemoteHardwareMonitor) error {
-	url := fmt.Sprintf("http://%s/mahm", m.targetHost)
+func pollMetrics(hm *RemoteHardwareMonitor) error {
+	url := fmt.Sprintf("http://%s/mahm", hm.targetHost)
 
-	httpClient := &http.Client{}
 	request, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		log.Printf("Failed to create request: %v", err)
 		return err
 	}
 
-	request.SetBasicAuth(*username, *password)
+	request.SetBasicAuth(hm.username, hm.password)
 
 	requestsCounter.Inc()
 	start := time.Now()
-	response, err := httpClient.Do(request)
+	response, err := hm.httpClient.Do(request)
 
 	requestsTime.Observe(time.Now().Sub(start).Seconds())
 
 	if err != nil {
 		failedRequestsCounter.Inc()
+		hm.failureCount += 1
 		log.Printf("Could not get information from %s: %v", url, err)
 		return err
 	}
+
+	defer response.Body.Close()
 
 	responsesCounter.WithLabelValues(string(response.StatusCode)).Inc()
 
@@ -106,6 +128,19 @@ func pollMetrics(m *RemoteHardwareMonitor) error {
 		return err
 	}
 
+	if (hm.gpus == nil && hm.failureCount >= 3) && len(hardwareData.Gpus.Entries) > 0 {
+		hm.gpus = hardwareData.Gpus.Entries
+
+		log.Printf("Gpus available in the host machine")
+
+		for _, gpu := range hm.gpus {
+			log.Printf("%s, Driver: %s, BIOS: %s, id: %s", gpu.Device, gpu.Driver, gpu.BIOS, gpu.GpuId)
+		}
+	}
+
+	// reset the failure counts on success
+	hm.failureCount = 0
+
 	for _, entry := range hardwareData.Data.Entries {
 		collector, err := getMetricCollector(entry.SourceName, entry.SourceUnits)
 		if err != nil {
@@ -118,12 +153,7 @@ func pollMetrics(m *RemoteHardwareMonitor) error {
 			}
 		}
 		if collector != nil {
-			// prometheus recommendation for percentage is to be between 0 and 1 not 0 and 100
-			if entry.SourceUnits == "%" && entry.MaxLimit > 1 {
-				(*collector).Set(entry.Data / 100.0)
-			} else {
-				(*collector).Set(entry.Data)
-			}
+			(*collector).Set(normalizeMetricValue(entry.Data, entry.SourceUnits))
 		}
 	}
 
@@ -152,79 +182,6 @@ var (
 		Buckets: prometheus.DefBuckets,
 	})
 )
-
-// regex for normalizing metrics
-var (
-	spaceRegex        = regexp.MustCompile("\\s+")
-	invalidCharacters = regexp.MustCompile("[^a-zA-Z_ ][^a-zA-Z0-9_ ]*")
-	cpuMetrics        = regexp.MustCompile("cpu.*?(\\d+)?.*")
-)
-
-var blackListRegex = []*regexp.Regexp{
-	//regexp.MustCompile("cpu.*?usage.*"),
-}
-
-var metricUnits = map[string]string{
-	"c":  "celsius",
-	"ms": "millis",
-	"w":  "watts",
-	"%":  "percent",
-}
-
-type BlackListedMetric struct {
-	MetricName string
-}
-
-func (b *BlackListedMetric) Error() string {
-	return fmt.Sprintf("The metric [%s] is black listed", b.MetricName)
-}
-
-func normalizeMetricName(metricName string, unit string) (string, *prometheus.Labels, error) {
-	var name = strings.ToLower(strings.TrimSpace(metricName))
-
-	for _, blRegex := range blackListRegex {
-		if blRegex.MatchString(name) {
-			return "", nil, &BlackListedMetric{
-				MetricName: metricName,
-			}
-		}
-	}
-
-	var labels prometheus.Labels
-
-	var suffix = ""
-
-	lowerUnit := strings.ToLower(unit)
-	if unitName, ok := metricUnits[lowerUnit]; ok {
-		suffix = unitName
-	} else {
-		suffix = lowerUnit
-	}
-
-	// check if it's a known metric
-	if cpuMetrics.MatchString(name) {
-		pieces := cpuMetrics.FindAllStringSubmatch(name, -1)
-		labels = make(map[string]string)
-
-		if pieces[0][1] != "" {
-			labels["core"] = pieces[0][1]
-		} else {
-			// reset the suffix to just total
-			suffix = "_total"
-		}
-	}
-
-	// we add the suffix in case there are any invalid character it will be removed
-	name = name + suffix
-
-	// remove invalid characters
-	name = invalidCharacters.ReplaceAllLiteralString(name, "")
-
-	// transform spaces in _
-	name = spaceRegex.ReplaceAllLiteralString(name, "_")
-
-	return name, &labels, nil
-}
 
 func getMetricCollector(metricName string, metricUnit string) (*prometheus.Gauge, error) {
 	name, labels, err := normalizeMetricName(metricName, metricUnit)

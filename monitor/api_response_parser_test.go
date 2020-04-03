@@ -1,4 +1,4 @@
-package main
+package monitor
 
 import (
 	assertPkg "github.com/stretchr/testify/assert"
@@ -10,7 +10,7 @@ import (
 func Test_parseXmlResponse(t *testing.T) {
 	assert := assertPkg.New(t)
 
-	testFilePath := "samples/api_response.xml"
+	testFilePath := "test_samples/api_response.xml"
 
 	require.FileExists(t, testFilePath)
 

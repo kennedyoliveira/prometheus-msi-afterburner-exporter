@@ -8,18 +8,9 @@ import (
 	"os"
 	"time"
 
+	"github.com/kennedyoliveira/prometheus-msi-afterburner-exporter/monitor"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
-
-// Interface for monitoring the MSIAfterBurner metrics
-type Monitor interface {
-
-	// Initialize the monitor
-	Start()
-
-	// Stop the monitor
-	Stop()
-}
 
 var (
 	host            = flag.String("host", "127.0.0.1", "The host/ip of the machine running MSI Afterburner Remote Server")
@@ -41,19 +32,20 @@ func main() {
 	}
 
 	log.Println("Starting...")
-	url := fmt.Sprintf("%s:%d", *host, *port)
+	host := fmt.Sprintf("%s:%d", *host, *port)
 
-	var monitor Monitor = NewRemoteHardwareMonitor(*updateInterval, url)
-	monitor.Start()
+	log.Printf("Target host: %s", host)
+	m := monitor.NewRemoteHardwareMonitor(*updateInterval, host, *username, *password)
+	m.Start()
 
 	http.Handle(*metricsEndpoint, promhttp.Handler())
-	http.HandleFunc("/monitor/stop", func(writer http.ResponseWriter, request *http.Request) {
-		monitor.Stop()
+	http.HandleFunc("/m/stop", func(writer http.ResponseWriter, request *http.Request) {
+		m.Stop()
 		writer.WriteHeader(204)
 	})
 
-	http.HandleFunc("/monitor/start", func(writer http.ResponseWriter, request *http.Request) {
-		monitor.Start()
+	http.HandleFunc("/m/start", func(writer http.ResponseWriter, request *http.Request) {
+		m.Start()
 		writer.WriteHeader(204)
 	})
 

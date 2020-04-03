@@ -1,4 +1,4 @@
-package main
+package monitor
 
 func GetMapKeys(m map[string]string) []string {
 	keys := make([]string, len(m))

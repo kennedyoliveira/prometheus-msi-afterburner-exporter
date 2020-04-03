@@ -1,4 +1,4 @@
-package main
+package monitor
 
 import (
 	"encoding/xml"
@@ -41,7 +41,7 @@ type HardwareMonitorEntries struct {
 
 type HardwareMonitorEntry struct {
 	SourceName          string  `xml:"srcName"`
-	SourceUnits         string  `xml:"srcUnit"`
+	SourceUnits         string  `xml:"srcUnits"`
 	LocalizedSourceName string  `xml:"localizedSrcName"`
 	LocalizedSourceUnit string  `xml:"localizedSrcUnits"`
 	RecommendedFormat   string  `xml:"recommendedFormat"`
