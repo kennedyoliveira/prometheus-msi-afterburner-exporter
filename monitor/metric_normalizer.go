@@ -92,7 +92,7 @@ func normalizeMetricName(metric *HardwareMonitorEntry, gpus *[]HardwareMonitorGp
 
 	for _, gpuRegex := range gpuMetrics {
 		// if it's a know GPU metric
-		if gpuRegex.MatchString(name) {
+		if gpus != nil && gpuRegex.MatchString(name) {
 			if len(*gpus) > metric.GpuIndex {
 				gpu := (*gpus)[metric.GpuIndex]
 
