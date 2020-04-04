@@ -49,6 +49,7 @@ var metricUnits = map[string]string{
 	"%":  "percent",
 	// this will be normalized to hertz
 	"mhz": "hertz",
+	"mb":  "bytes",
 }
 
 func normalizeMetricName(metric *HardwareMonitorEntry, gpus *[]HardwareMonitorGpuEntry) (string, *prometheus.Labels, error) {
