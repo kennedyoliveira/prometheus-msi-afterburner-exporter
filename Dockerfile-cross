@@ -1,0 +1,13 @@
+FROM --platform=$BUILDPLATFORM golang:alpine AS build
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+WORKDIR /go/src/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter
+COPY ./ ./
+RUN apk update && \
+    apk add make
+RUN make build
+
+FROM alpine
+COPY --from=build /go/src/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter/bin/prometheus-msi-afterburner-exporter /bin/
+
+ENTRYPOINT /bin/prometheus-msi-afterburner-exporter
