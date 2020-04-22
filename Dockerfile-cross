@@ -7,6 +7,6 @@ RUN apk add -U make
 RUN make build
 
 FROM alpine
-COPY --from=build /go/src/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter/bin/prometheus-msi-afterburner-exporter /bin/
+COPY --from=build /go/src/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter/bin/afterburner-exporter /bin/
 
-ENTRYPOINT [ "/bin/prometheus-msi-afterburner-exporter" ]
+ENTRYPOINT [ "/bin/afterburner-exporter" ]
