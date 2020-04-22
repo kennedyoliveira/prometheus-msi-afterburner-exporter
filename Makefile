@@ -1,10 +1,15 @@
 GO ?= GO111MODULE=on GOOS=linux CGO_ENABLED=0 go
 EXEC_NAME ?= afterburner-exporter
-DOCKER_IMAGE ?= kennedyoliveira/afterburner-exporter
 BUILDX ?= docker buildx
 IMG_TOOLS ?= $(BUILDX) imagetools
 PLATFORMS ?= linux/amd64,linux/i386,linux/arm64,linux/arm/v7
 pkgs     = $(shell $(GO) list ./... | grep -v vendor)
+
+DOCKER_IMAGE ?= kennedyoliveira/afterburner-exporter
+
+ifeq ($(DOCKER_TAG),)
+	DOCKER_TAG = latest
+endif
 
 .PHONY: build test compile clean docker-init docker-build docker-clean docker-inspect format vet
 
@@ -56,9 +61,10 @@ docker-init:
 	@$(BUILDX) inspect --bootstrap afterburner-exporter-builder
 
 docker-build: clean
+	@echo ">> building multi-arch docker images, tag=$(DOCKER_TAG)"
 	@$(BUILDX) build -f Dockerfile-cross \
 			  --platform $(PLATFORMS) \
-			  --tag $(DOCKER_IMAGE) \
+			  --tag $(DOCKER_IMAGE):$(DOCKER_TAG) \
 			  --push \
 			  .
 
@@ -66,4 +72,4 @@ docker-clean:
 	@$(BUILDX) rm afterburner-exporter-builder
 
 docker-inspect:
-	@$(IMG_TOOLS) inspect $(DOCKER_IMAGE)
+	@$(IMG_TOOLS) inspect $(DOCKER_IMAGE):$(DOCKER_TAG)
