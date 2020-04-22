@@ -1,4 +1,4 @@
-GO ?= GO111MODULE=on GOOS=linux CGO_ENABLED=1 go
+GO ?= GO111MODULE=on GOOS=linux CGO_ENABLED=0 go
 EXEC_NAME ?= afterburner-exporter
 DOCKER_IMAGE ?= kennedyoliveira/afterburner-exporter
 BUILDX ?= docker buildx
@@ -20,9 +20,23 @@ test:
 
 compile:
 	@echo ">> cross compiling"
-	@GOOS=windows GOARCH=amd64 $(GO) build -v -o bin/$(EXEC_NAME)_winx64.exe .
+	@echo ">>> compiling for windows x32"
+	@GOOS=windows GOARCH=386 $(GO) build -v -o bin/$(EXEC_NAME)_win_x32.exe .
+
+	@echo ">>> compiling for windows x64"
+	@GOOS=windows GOARCH=amd64 $(GO) build -v -o bin/$(EXEC_NAME)_win_x64.exe .
+
+	@echo ">>> compiling for linux x32"
+	@GOOS=linux GOARCH=386 $(GO) build -v -o bin/$(EXEC_NAME)_unix_x32 .
+
+	@echo ">>> compiling for linux x64"
 	@GOOS=linux GOARCH=amd64 $(GO) build -v -o bin/$(EXEC_NAME)_unix_x64 .
+
+	@echo ">>> compiling for arm"
 	@GOOS=linux GOARCH=arm $(GO) build -v -o bin/$(EXEC_NAME)_unix_arm .
+
+	@echo ">>> compiling for arm 64"
+	@GOOS=linux GOARCH=arm64 $(GO) build -v -o bin/$(EXEC_NAME)_unix_arm64 .
 
 format:
 	@echo ">> formatting code"

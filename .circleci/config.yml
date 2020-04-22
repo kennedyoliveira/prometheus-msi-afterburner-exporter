@@ -16,3 +16,10 @@ jobs:
       - run: make vet
       - run: make test
       - run: make build
+      - run:
+          name: Cross compile
+          command: make compile
+
+      - store_artifacts:
+          path: bin
+          destination: artifact-file
