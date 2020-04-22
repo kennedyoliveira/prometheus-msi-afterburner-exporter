@@ -1,3 +1,5 @@
+[![<ORG_NAME>](https://circleci.com/gh/kennedyoliveira/prometheus-msi-afterburner-exporter.svg?style=shield)](https://app.circleci.com/pipelines/github/kennedyoliveira/prometheus-msi-afterburner-exporter)
+
 # Prometheus Exporter for MSI Afterburner
 Export metrics from MSI Afterburner, any metric, to prometheus.
 
