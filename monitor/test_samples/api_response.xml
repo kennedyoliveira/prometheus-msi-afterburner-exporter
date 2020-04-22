@@ -1,0 +1,1611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HardwareMonitor>
+    <HardwareMonitorHeader>
+        <signature>1296123981</signature>
+        <version>131072</version>
+        <headerSize>32</headerSize>
+        <entryCount>122</entryCount>
+        <entrySize>1324</entrySize>
+        <time>1585285870</time>
+        <gpuEntryCount>1</gpuEntryCount>
+        <gpuEntrySize>1304</gpuEntrySize>
+    </HardwareMonitorHeader>
+    <HardwareMonitorEntries>
+        <HardwareMonitorEntry>
+            <srcName>GPU temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>GPU temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>55</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>0</gpu>
+            <srcId>0</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>GPU usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>GPU usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>0</gpu>
+            <srcId>48</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>FB usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>FB usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>50</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>VID usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>VID usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>51</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>BUS usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>BUS usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>52</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Memory usage</srcName>
+            <srcUnits>MB</srcUnits>
+            <localizedSrcName>Memory usage</localizedSrcName>
+            <localizedSrcUnits>MB</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1306.281</data>
+            <minLimit>0</minLimit>
+            <maxLimit>8192</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>0</gpu>
+            <srcId>49</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Core clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>Core clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1569</data>
+            <minLimit>0</minLimit>
+            <maxLimit>2500</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>0</gpu>
+            <srcId>32</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Memory clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>Memory clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>5508</data>
+            <minLimit>0</minLimit>
+            <maxLimit>7500</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>34</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Fan speed</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>Fan speed</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>19</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>16</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Fan tachometer</srcName>
+            <srcUnits>RPM</srcUnits>
+            <localizedSrcName>Fan tachometer</localizedSrcName>
+            <localizedSrcUnits>RPM</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>703</data>
+            <minLimit>0</minLimit>
+            <maxLimit>10000</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>17</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Temp limit</srcName>
+            <srcUnits/>
+            <localizedSrcName>Temp limit</localizedSrcName>
+            <localizedSrcUnits/>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>1</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>112</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Voltage limit</srcName>
+            <srcUnits/>
+            <localizedSrcName>Voltage limit</localizedSrcName>
+            <localizedSrcUnits/>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>1</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>114</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>No load limit</srcName>
+            <srcUnits/>
+            <localizedSrcName>No load limit</localizedSrcName>
+            <localizedSrcUnits/>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1</data>
+            <minLimit>0</minLimit>
+            <maxLimit>1</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>116</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU1 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU1 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>6.250002</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU2 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU2 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>15.625</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>1</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU3 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU3 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>3.125002</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>2</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU4 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU4 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>3</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU5 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU5 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4.687502</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>4</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU6 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU6 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>20.3125</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>5</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU7 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU7 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>3.125002</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>6</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU8 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU8 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>3.125002</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>7</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU9 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU9 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1.562502</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>8</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU10 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU10 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>9</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU11 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU11 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4.687502</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>10</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU12 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU12 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>35.9375</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>11</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU13 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU13 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1.562502</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>12</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU14 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU14 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>13</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU15 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU15 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>14</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU16 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU16 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>9.375002</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>15</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU17 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU17 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>16</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU18 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU18 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>3.125002</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>17</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU19 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU19 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>18</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU20 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU20 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1.562502</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>19</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU21 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU21 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>20</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU22 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU22 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1.562502</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>21</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU23 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU23 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>2.235174E-06</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>22</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU24 usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU24 usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>1.562502</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>23</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU usage</srcName>
+            <srcUnits>%</srcUnits>
+            <localizedSrcName>CPU usage</localizedSrcName>
+            <localizedSrcUnits>%</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4.882814</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>144</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU1 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU1 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU2 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU2 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>1</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU3 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU3 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>2</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU4 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU4 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>3</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU5 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU5 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>4</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU6 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU6 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>5</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU7 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU7 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>6</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU8 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU8 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>7</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU9 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU9 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>8</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU10 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU10 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>9</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU11 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU11 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>10</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU12 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU12 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>11</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU13 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU13 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>12</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU14 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU14 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>13</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU15 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU15 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>14</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU16 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU16 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>15</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU17 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU17 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>16</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU18 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU18 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>17</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU19 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU19 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>18</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU20 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU20 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>19</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU21 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU21 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>20</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU22 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU22 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>21</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU23 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU23 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>22</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU24 clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU24 clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>None</flags>
+            <gpu>23</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU clock</srcName>
+            <srcUnits>MHz</srcUnits>
+            <localizedSrcName>CPU clock</localizedSrcName>
+            <localizedSrcUnits>MHz</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>4225</data>
+            <minLimit>0</minLimit>
+            <maxLimit>5000</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>160</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>RAM usage</srcName>
+            <srcUnits>MB</srcUnits>
+            <localizedSrcName>RAM usage</localizedSrcName>
+            <localizedSrcUnits>MB</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>13912</data>
+            <minLimit>0</minLimit>
+            <maxLimit>16384</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>0</gpu>
+            <srcId>145</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Commit charge</srcName>
+            <srcUnits>MB</srcUnits>
+            <localizedSrcName>Commit charge</localizedSrcName>
+            <localizedSrcUnits>MB</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>17656</data>
+            <minLimit>0</minLimit>
+            <maxLimit>16384</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>146</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Framerate</srcName>
+            <srcUnits>FPS</srcUnits>
+            <localizedSrcName>Framerate</localizedSrcName>
+            <localizedSrcUnits>FPS</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>80</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Frametime</srcName>
+            <srcUnits>ms</srcUnits>
+            <localizedSrcName>Frametime</localizedSrcName>
+            <localizedSrcUnits>ms</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>50</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>81</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Framerate Min</srcName>
+            <srcUnits>FPS</srcUnits>
+            <localizedSrcName>Framerate Min</localizedSrcName>
+            <localizedSrcUnits>FPS</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>82</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Framerate Avg</srcName>
+            <srcUnits>FPS</srcUnits>
+            <localizedSrcName>Framerate Avg</localizedSrcName>
+            <localizedSrcUnits>FPS</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>83</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Framerate Max</srcName>
+            <srcUnits>FPS</srcUnits>
+            <localizedSrcName>Framerate Max</localizedSrcName>
+            <localizedSrcUnits>FPS</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>84</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Framerate 1% Low</srcName>
+            <srcUnits>FPS</srcUnits>
+            <localizedSrcName>Framerate 1% Low</localizedSrcName>
+            <localizedSrcUnits>FPS</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>85</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>Framerate 0.1% Low</srcName>
+            <srcUnits>FPS</srcUnits>
+            <localizedSrcName>Framerate 0.1% Low</localizedSrcName>
+            <localizedSrcUnits>FPS</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>0</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>86</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU1 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU1 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU2 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU2 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>1</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU3 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU3 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>2</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU4 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU4 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>3</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU5 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU5 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>4</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU6 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU6 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>5</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU7 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU7 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>6</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU8 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU8 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>7</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU9 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU9 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>8</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU10 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU10 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>9</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU11 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU11 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>10</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU12 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU12 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>11</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU13 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU13 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>12</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU14 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU14 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>13</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU15 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU15 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>14</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU16 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU16 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>15</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU17 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU17 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>16</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU18 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU18 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>17</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU19 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU19 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>18</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU20 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU20 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>19</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU21 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU21 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>20</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU22 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU22 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>21</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU23 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU23 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>22</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU24 temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU24 temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>None</flags>
+            <gpu>23</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU temperature</srcName>
+            <srcUnits>C</srcUnits>
+            <localizedSrcName>CPU temperature</localizedSrcName>
+            <localizedSrcUnits>C</localizedSrcUnits>
+            <recommendedFormat>%.0f</recommendedFormat>
+            <data>54.75</data>
+            <minLimit>0</minLimit>
+            <maxLimit>100</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>128</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU1 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU1 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>2.503586</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>0</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU2 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU2 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>2.503586</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>1</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU3 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU3 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.806671</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>2</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU4 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU4 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.806671</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>3</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU5 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU5 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>2.610336</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>4</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU6 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU6 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>2.623643</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>5</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU7 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU7 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.709</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>6</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU8 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU8 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.709</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>7</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU9 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU9 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.898308</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>8</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU10 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU10 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.898308</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>9</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU11 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU11 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>3.904327</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>10</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU12 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU12 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>3.908715</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>11</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU13 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU13 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.446189</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>12</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU14 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU14 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.446189</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>13</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU15 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU15 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.974245</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>14</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU16 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU16 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.974245</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>15</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU17 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU17 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.605988</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>16</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU18 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU18 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.605988</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>17</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU19 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU19 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.512962</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>18</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU20 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU20 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.512962</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>19</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU21 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU21 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.46151</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>20</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU22 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU22 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.458439</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>21</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU23 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU23 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.504216</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>22</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU24 power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU24 power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>1.504216</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>None</flags>
+            <gpu>23</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+        <HardwareMonitorEntry>
+            <srcName>CPU power</srcName>
+            <srcUnits>W</srcUnits>
+            <localizedSrcName>CPU power</localizedSrcName>
+            <localizedSrcUnits>W</localizedSrcUnits>
+            <recommendedFormat>%.1f</recommendedFormat>
+            <data>58.60304</data>
+            <minLimit>0</minLimit>
+            <maxLimit>200</maxLimit>
+            <flags>SHOW_IN_OSD</flags>
+            <gpu>4294967295</gpu>
+            <srcId>256</srcId>
+        </HardwareMonitorEntry>
+    </HardwareMonitorEntries>
+    <HardwareMonitorGpuEntries>
+        <HardwareMonitorGpuEntry>
+            <gpuId>VEN_10DE&amp;DEV_1B06&amp;SUBSYS_85EA1043&amp;REV_A1&amp;BUS_11&amp;DEV_0&amp;FN_0</gpuId>
+            <family>GP102-A</family>
+            <device>GeForce GTX 1080 Ti</device>
+            <driver>445.75</driver>
+            <BIOS>86.02.39.00.23</BIOS>
+            <memAmount>0</memAmount>
+        </HardwareMonitorGpuEntry>
+    </HardwareMonitorGpuEntries>
+</HardwareMonitor>
