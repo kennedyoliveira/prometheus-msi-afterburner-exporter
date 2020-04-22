@@ -1,4 +1,6 @@
 [![<ORG_NAME>](https://circleci.com/gh/kennedyoliveira/prometheus-msi-afterburner-exporter.svg?style=shield)](https://app.circleci.com/pipelines/github/kennedyoliveira/prometheus-msi-afterburner-exporter)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter)](https://goreportcard.com/report/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kennedyoliveira/afterburner-exporter.svg?cacheSeconds=3600)](https://hub.docker.com/r/kennedyoliveira/afterburner-exporter)
 
 # Prometheus Exporter for MSI Afterburner
 Export metrics from MSI Afterburner, any metric, to prometheus.
