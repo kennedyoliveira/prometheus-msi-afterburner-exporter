@@ -1,10 +1,9 @@
-FROM --platform=$BUILDPLATFORM golang AS build
+FROM golang:alpine AS build
 ENV GOOS=linux
 ENV CGO_ENABLED=1
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
 WORKDIR /go/src/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter
 COPY ./ ./
+RUN apk add -U make
 RUN make build
 
 FROM alpine

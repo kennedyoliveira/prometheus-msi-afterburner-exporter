@@ -1,4 +1,4 @@
-GO ?= GO111MODULE=on go
+GO ?= GO111MODULE=on GOOS=linux CGO_ENABLED=1 go
 EXEC_NAME ?= prometheus-msi-afterburner-exporter
 DOCKER_IMAGE ?= kennedyoliveira/prometheus-msi-afterburner-exporter
 BUILDX ?= docker buildx
