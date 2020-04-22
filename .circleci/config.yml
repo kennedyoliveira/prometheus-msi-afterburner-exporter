@@ -11,4 +11,8 @@ jobs:
     steps:
       - checkout
 
-      - run: make clean format vet test build
+      - run: make clean
+      - run: make format
+      - run: make vet
+      - run: make test
+      - run: make build
