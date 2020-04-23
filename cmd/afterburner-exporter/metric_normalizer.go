@@ -1,11 +1,13 @@
-package monitor
+package main
 
 import (
 	"fmt"
-	"github.com/prometheus/client_golang/prometheus"
 	"log"
 	"regexp"
 	"strings"
+
+	"github.com/kennedyoliveira/prometheus-msi-afterburner-exporter/afterburner"
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 type BlackListedMetric struct {
@@ -21,38 +23,42 @@ var (
 	spaceRegex        = regexp.MustCompile("\\s+")
 	invalidCharacters = regexp.MustCompile("[^a-zA-Z_ ][^a-zA-Z0-9_ ]*")
 	cpuMetrics        = regexp.MustCompile("cpu.*?(\\d+)?.*")
+
+	// for framerate 1% and 0.1% low
+	frameMetrics = regexp.MustCompile("framerate (.+?)%.?low")
 )
 
-// TODO load from config
-var blackListRegex = []*regexp.Regexp{
-	//regexp.MustCompile("cpu.*?usage.*"),
-}
+var (
+	// TODO load from config
+	blackListRegex = []*regexp.Regexp{
+		//regexp.MustCompile("cpu.*?usage.*"),
+	}
 
-// TODO load from config
-// regex to filter gpu metrics and assign them to
-// the GPU
-var gpuMetrics = []*regexp.Regexp{
-	regexp.MustCompile(".*?gpu.*?"),
-	regexp.MustCompile("(fb|vid|bus|memory) usage"),
-	regexp.MustCompile("(core|memory) clock"),
-	regexp.MustCompile("$power^"),
-	regexp.MustCompile("fan (speed|tachometer)"),
-	regexp.MustCompile("(temp|power|voltage|no load) limit"),
-	// this are not gpu specific, it applies to the whole system
-	//regexp.MustCompile("frame(rate|time).*"),
-}
+	// TODO load from config
+	// regex to filter gpu metrics and assign them to the GPU
+	gpuMetrics = []*regexp.Regexp{
+		regexp.MustCompile(".*?gpu.*?"),
+		regexp.MustCompile("(fb|vid|bus|memory) usage"),
+		regexp.MustCompile("(core|memory) clock"),
+		regexp.MustCompile("$power^"),
+		regexp.MustCompile("fan (speed|tachometer)"),
+		regexp.MustCompile("(temp|power|voltage|no load) limit"),
+	}
 
-var metricUnits = map[string]string{
-	"c":  "celsius",
-	"ms": "millis",
-	"w":  "watts",
-	"%":  "percent",
-	// this will be normalized to hertz
-	"mhz": "hertz",
-	"mb":  "bytes",
-}
+	metricUnits = map[string]string{
+		"c":  "celsius",
+		"ms": "millis",
+		"w":  "watts",
+		"%":  "percent",
+		// this will be normalized to hertz
+		"mhz": "hertz",
+		"mb":  "bytes",
+	}
+)
 
-func normalizeMetricName(metric *HardwareMonitorEntry, gpus *[]HardwareMonitorGpuEntry) (string, *prometheus.Labels, error) {
+// normalize the metric name to be compatible with prometheus standard
+// also get know labels for metrics like cpu or gpu
+func normalizeMetricName(metric *afterburner.HardwareMonitorEntry, gpus *[]afterburner.HardwareMonitorGpuEntry) (string, *prometheus.Labels, error) {
 	metricName := metric.LocalizedSourceName
 	unit := metric.SourceUnits
 
@@ -91,16 +97,26 @@ func normalizeMetricName(metric *HardwareMonitorEntry, gpus *[]HardwareMonitorGp
 		}
 	}
 
+	if frameMetrics.MatchString(name) {
+		pieces := frameMetrics.FindAllStringSubmatch(name, -1)
+
+		percent := pieces[0][1]
+		if percent != "" {
+			labels["percent"] = percent
+		}
+	}
+
 	for _, gpuRegex := range gpuMetrics {
 		// if it's a know GPU metric
 		if gpus != nil && gpuRegex.MatchString(name) {
-			if len(*gpus) > metric.GpuIndex {
+			if int64(len(*gpus)) > metric.GpuIndex {
 				gpu := (*gpus)[metric.GpuIndex]
 
 				labels["gpu"] = gpu.Device
 				labels["gpu_id"] = gpu.GpuId
 				labels["gpu_bios"] = gpu.BIOS
 				labels["gpu_driver"] = gpu.Driver
+				labels["gpu_family"] = gpu.Family
 			} else {
 				log.Printf("GPU index of %d but only %d gpus available", metric.GpuIndex+1, len(*gpus))
 			}
@@ -121,6 +137,8 @@ func normalizeMetricName(metric *HardwareMonitorEntry, gpus *[]HardwareMonitorGp
 	return name, &labels, nil
 }
 
+// normalize the value according to the prometheus recommended standards
+// like MB/GB to bytes
 func normalizeMetricValue(metricValue float64, metricUnit string) float64 {
 	switch metricUnit {
 	case "%":
