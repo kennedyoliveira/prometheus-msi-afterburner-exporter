@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/kennedyoliveira/prometheus-msi-afterburner-exporter/monitor"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
@@ -24,6 +25,8 @@ var (
 )
 
 func main() {
+	version := GetVersionInfo()
+	log.Printf("afterburner-exporter %s", version)
 	flag.Parse()
 
 	if *help {
@@ -35,6 +38,7 @@ func main() {
 	host := fmt.Sprintf("%s:%d", *host, *port)
 
 	log.Printf("Target host: %s", host)
+	prometheus.MustRegister(NewVersionCollector(version))
 	m := monitor.NewRemoteHardwareMonitor(*updateInterval, host, *username, *password)
 	m.Start()
 

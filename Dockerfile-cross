@@ -3,7 +3,7 @@ ENV GOOS=linux
 ENV CGO_ENABLED=1
 WORKDIR /go/src/github.com/kennedyoliveira/prometheus-msi-afterburner-exporter
 COPY ./ ./
-RUN apk add -U make
+RUN apk add -U make git
 RUN make build
 
 FROM alpine
