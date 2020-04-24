@@ -1,4 +1,4 @@
-package monitor
+package afterburner
 
 import (
 	assertPkg "github.com/stretchr/testify/assert"
@@ -16,7 +16,7 @@ func Test_parseXmlResponse(t *testing.T) {
 
 	sampleXmlResponse, _ := os.Open(testFilePath)
 
-	parsedResponse, err := parseResponse(sampleXmlResponse)
+	parsedResponse, err := ParseResponse(sampleXmlResponse)
 	if err != nil {
 		t.Fatalf("Could not parse xml response: %v", err)
 	}

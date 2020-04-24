@@ -16,10 +16,11 @@ The `afterburner-exporter` doesn't need to be on the same computer, it can be in
 barely consume any resource, so if you run it alongside your gaming computer it won't affect performance.
 
 ## Configuration Parameters
-You can pass this parameters as arguments, like this:
+You can pass these parameters as arguments:
 
+Example:
 ```shell script
-afterburner-exporter host=192.168.1.32 port=1082 listen-address=0.0.0.0:9090 metrics-endpoint=/custom/metrics update-interval=10s
+afterburner-exporter host=192.168.1.32 port=1082 listen-address=0.0.0.0:9090 metrics-endpoint=/custom/metrics
 ```
 
 | Parameter         | Default               | Description
@@ -28,7 +29,6 @@ afterburner-exporter host=192.168.1.32 port=1082 listen-address=0.0.0.0:9090 met
 | port              | 82                    | The port of the MSI Afterburner Server
 | username          | MSIAfterburner        | Username to authenticate in MSI Afterburner Server, should be MSIAfterburner unless a new version changes it.
 | password          | 17cc95b4017d496f82    | Password to authenticate in MSI Afterburner Server, it is fixed unless you change it in the config files.
-| update-interval   | 2 seconds             | Interval in which the information will be queried in MSI Afterburner Server.
 | listen-address    | 0.0.0.0:8080          | Address and port where this app will listen to request.
 | metrics-endpoint  | /metrics              | Endpoint which the metrics will be available to be scrapped by Prometheus.
 
@@ -40,6 +40,7 @@ docker container run --name afterburner-exporter -p 8080:8080 kennedyoliveira/af
 ``` 
 
 There are images built for the following architectures:
+
     - linux/amd64
     - linux/i386
     - linux/arm64
@@ -62,7 +63,6 @@ For other additional options check the `Makefile`
 
 ## TODO
 
- - [ ] Investigate if it's possible to implement a custom collector instead of querying the endpoint in intervals
  - [ ] Allow blacklist from config
  - [ ] Allow gpu regex from config
  - [ ] Configuration from environment variables 

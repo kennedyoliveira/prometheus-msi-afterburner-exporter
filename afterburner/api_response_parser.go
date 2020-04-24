@@ -1,4 +1,4 @@
-package monitor
+package afterburner
 
 import (
 	"encoding/xml"
@@ -49,11 +49,11 @@ type HardwareMonitorEntry struct {
 	MinLimit            float64 `xml:"minLimit"`
 	MaxLimit            float64 `xml:"maxLimit"`
 	Flags               string  `xml:"flags"`
-	GpuIndex            int     `xml:"gpu"`
+	GpuIndex            int64   `xml:"gpu"`
 	SourceId            string  `xml:"srcId"`
 }
 
-func parseResponse(reader io.Reader) (*HardwareMonitor, error) {
+func ParseResponse(reader io.Reader) (*HardwareMonitor, error) {
 	var hardwareMonitor HardwareMonitor
 
 	err := xml.NewDecoder(reader).Decode(&hardwareMonitor)
